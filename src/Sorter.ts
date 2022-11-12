@@ -1,20 +1,20 @@
-export class Sorter {
-    collection: /*type todo*/;
+import { NumbersCollection } from "./NumbersCollection";
 
-    constructor(collection: /*type todo*/) {
+export class Sorter {
+    collection: NumbersCollection;
+
+    constructor(collection: NumbersCollection) {
         this.collection = collection;
     }
 
     sort(): void {
-        const { length } = this.collection;
+        const { length } = this.collection; //the getter length is used here
 
         for(let i=0 ; i<length ; i++) {
             for(let j=0 ; j<length-i-1 ; j++) {
 
-                    if (this.collection[j] > this.collection[j+1]) {
-                        const temp = this.collection[j];
-                        this.collection[j] = this.collection[j+1];
-                        this.collection[j+1] = temp;
+                    if (this.collection.compare(j, j+1)) {
+                        this.collection.swap(j, j+1);
                     }
             }
         }
