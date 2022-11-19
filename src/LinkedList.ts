@@ -80,7 +80,7 @@ export class LinkedList {
 
         let node: Node | null = this.head;
         while(node) {
-            console.log(node);
+            console.log(node.data);
             node = node.next;
         }
     }
